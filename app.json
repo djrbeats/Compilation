@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "spy-radar-zones",
+    "slug": "spy-radar-zones",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#06110D"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Spy Radar Zones usa sua localização para monitorar zonas de risco próximas em tempo real."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#45FF9A"
+        }
+      ]
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Spy Radar Zones usa sua localização para monitorar zonas de risco próximas em tempo real.",
+        "NSUserNotificationsUsageDescription": "Spy Radar Zones envia alertas locais quando você entra em uma zona de risco."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#06110D",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "POST_NOTIFICATIONS",
+        "VIBRATE",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ],
+      "predictiveBackGestureEnabled": false,
+      "package": "com.spyradarzones.app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "30e4b8d6-c7f7-451f-9e4d-c075c2b6c9ef"
+      }
+    }
+  }
+}
