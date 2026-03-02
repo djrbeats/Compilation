@@ -4,34 +4,36 @@ on:
   push:
     branches:
       - main
+  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - name: Install dependencies
-        run: npm install
+          cache: npm
 
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
+          cache: gradle
 
-      - name: Grant permission
-        run: chmod +x android/gradlew
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build Debug APK
         run: |
           cd android
+          chmod +x ./gradlew
           ./gradlew assembleDebug
 
       - name: Upload APK

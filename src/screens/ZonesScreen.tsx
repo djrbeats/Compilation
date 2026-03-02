@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Alert, FlatList, StyleSheet, Text, View } from 'react-native';
-import * as Location from 'expo-location';
 import { useFocusEffect } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import SpyHeader from '../components/SpyHeader';
+import * as Location from '../native/location';
 import ZoneCard from '../components/ZoneCard';
 import { listZones, removeZone } from '../storage/zones';
 import { Zone } from '../types/zone';

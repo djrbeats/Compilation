@@ -7,14 +7,14 @@ import {
   View,
 } from 'react-native';
 import MapView, { Circle, LongPressEvent, Marker, PROVIDER_DEFAULT } from 'react-native-maps';
-import * as Location from 'expo-location';
-import * as Notifications from 'expo-notifications';
 import { useFocusEffect } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import AddZoneModal from './AddZoneModal';
 import RadarHud from '../components/RadarHud';
 import SpyHeader from '../components/SpyHeader';
+import * as Location from '../native/location';
+import * as Notifications from '../native/notifications';
 import { addZone, listZones } from '../storage/zones';
 import { Zone, ZoneDraft, ZonePresenceState } from '../types/zone';
 import { findNearestZone, formatDistance, getThreatStatus, haversineDistance } from '../utils/geo';

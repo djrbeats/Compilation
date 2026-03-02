@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar } from 'expo-status-bar';
-import * as Notifications from 'expo-notifications';
+import { StatusBar } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import MapScreen from './src/screens/MapScreen';
 import ZonesScreen from './src/screens/ZonesScreen';
+import * as Notifications from './src/native/notifications';
 import { Zone } from './src/types/zone';
 
 export type RootStackParamList = {
@@ -79,7 +79,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer theme={navTheme}>
-        <StatusBar style="light" />
+        <StatusBar barStyle="light-content" backgroundColor="#06110D" />
         <Stack.Navigator
           initialRouteName="Mapa"
           screenOptions={{
