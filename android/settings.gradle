@@ -1,9 +1,18 @@
 pluginManagement {
-    includeBuild("../node_modules/@react-native/gradle-plugin")
+    def legacyReactNativeGradlePlugin = file("../node_modules/react-native-gradle-plugin")
+    if (legacyReactNativeGradlePlugin.exists()) {
+        includeBuild("../node_modules/react-native-gradle-plugin")
+    }
+
+    def reactNativeGradlePlugin = file("../node_modules/@react-native/gradle-plugin")
+    if (reactNativeGradlePlugin.exists()) {
+        includeBuild("../node_modules/@react-native/gradle-plugin")
+    }
+
     repositories {
+        gradlePluginPortal()
         google()
         mavenCentral()
-        gradlePluginPortal()
     }
 }
 

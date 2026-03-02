@@ -1,4 +1,6 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id("com.facebook.react.rootproject")
+}
 
 buildscript {
     repositories {
@@ -7,7 +9,6 @@ buildscript {
     }
     dependencies {
         classpath("com.android.tools.build:gradle:8.2.1")
-        classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22")
     }
 }
@@ -20,5 +21,3 @@ allprojects {
         maven { url 'https://www.jitpack.io' }
     }
 }
-
-apply plugin: "com.facebook.react.rootproject"

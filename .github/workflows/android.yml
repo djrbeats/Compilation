@@ -31,10 +31,10 @@ jobs:
         run: npm ci
 
       - name: Build Debug APK
+        working-directory: android
         run: |
-          cd android
           chmod +x ./gradlew
-          ./gradlew assembleDebug
+          ./gradlew :app:assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
