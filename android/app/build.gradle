@@ -34,17 +34,23 @@ def enableMinifyInReleaseBuilds = (findProperty('android.enableMinifyInReleaseBu
  */
 def jscFlavor = 'io.github.react-native-community:jsc-android:2026004.+'
 
-android {
-    ndkVersion rootProject.ext.ndkVersion
+def ndkVersionValue = "27.1.12297006"
+def buildToolsVersionValue = "36.0.0"
+def compileSdkVersionValue = 36
+def minSdkVersionValue = 24
+def targetSdkVersionValue = 36
 
-    buildToolsVersion rootProject.ext.buildToolsVersion
-    compileSdk rootProject.ext.compileSdkVersion
+android {
+    ndkVersion ndkVersionValue
+
+    buildToolsVersion buildToolsVersionValue
+    compileSdk compileSdkVersionValue
 
     namespace 'com.spyradarzones.app'
     defaultConfig {
         applicationId 'com.spyradarzones.app'
-        minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        minSdkVersion minSdkVersionValue
+        targetSdkVersion targetSdkVersionValue
         versionCode 1
         versionName "1.0.0"
 
